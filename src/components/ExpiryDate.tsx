@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { StyleSheet, TextInput } from "react-native";
 
-import { FramesConsumer } from "../Frames";
+import { FramesConsumer, FramesContext } from "../Frames";
 import { DEFAULT_CARD_EXPIRY_DATE_PLACEHOLDER } from "../utils/constants";
 import { DATE_CHANGE } from "../utils/actions";
 import { FramesFieldProps } from "../types/types";
 
 const ExpiryDate: React.SFC<FramesFieldProps> = (props) => {
+  const { dispatch } = useContext(FramesContext);
+
+  useEffect(() => {
+    dispatch({ type: DATE_CHANGE, payload: props.value });
+  }, [props.value]);
+
   return (
     <FramesConsumer>
       {({ state, dispatch }) => {
