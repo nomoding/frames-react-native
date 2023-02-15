@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { StyleSheet, View, TextInput, Image } from "react-native";
 
 import { BIN_CHANGE, CARD_CHANGE } from "../utils/actions";
-import { FramesConsumer } from "../Frames";
+import { FramesConsumer, FramesContext } from "../Frames";
 import { FramesCardFieldProps } from "../types/types";
 import { DEFAULT_CARD_NUMBER_PLACEHOLDER } from "../utils/constants";
 
 const CardNumber: React.FC<FramesCardFieldProps> = (props) => {
+  const { dispatch } = useContext(FramesContext);
+
+  useEffect(() => {
+    dispatch({ type: CARD_CHANGE, payload: props.value });
+  }, [props.value]);
+
   return (
     <FramesConsumer>
       {({ state, dispatch }) => {

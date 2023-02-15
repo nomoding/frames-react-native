@@ -24,7 +24,7 @@ export interface CardNumberState {
   valid: boolean;
 }
 
-export type FramesFieldProps = Omit<TextInputProps, "value" | "onChangeText">;
+export type FramesFieldProps = TextInputProps;
 
 export interface FramesCardFieldProps extends FramesFieldProps {
   showIcon?: boolean;
