@@ -31,6 +31,7 @@ const CardNumber: React.FC<FramesCardFieldProps> = (props) => {
               style={[styles.cardNumber, props.style]}
               onChangeText={(val: string) => {
                 dispatch({ type: CARD_CHANGE, payload: val });
+                props.onChangeText && props.onChangeText(val);
                 if (
                   val.replace(/[^0-9]/g, "").length >= 8 &&
                   val.replace(/[^0-9]/g, "").substring(0, 8) !==

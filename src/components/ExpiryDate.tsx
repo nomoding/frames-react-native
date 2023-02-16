@@ -29,9 +29,10 @@ const ExpiryDate: React.SFC<FramesFieldProps> = (props) => {
             {...props}
             style={[styles.expiryDate, props.style]}
             value={state.expiryDate}
-            onChangeText={(val: string) =>
-              dispatch({ type: DATE_CHANGE, payload: val })
-            }
+            onChangeText={(val: string) => {
+              dispatch({ type: DATE_CHANGE, payload: val });
+              props.onChangeText && props.onChangeText(val);
+            }}
           />
         );
       }}

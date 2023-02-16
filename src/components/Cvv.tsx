@@ -30,9 +30,10 @@ const Cvv: React.SFC<FramesFieldProps> = (props) => {
             style={[styles.cvv, props.style]}
             value={state.cvv}
             maxLength={state.cvvLength}
-            onChangeText={(val: string) =>
-              dispatch({ type: CVV_CHANGE, payload: val })
-            }
+            onChangeText={(val: string) => {
+              dispatch({ type: CVV_CHANGE, payload: val });
+              props.onChangeText && props.onChangeText(val);
+            }}
           />
         );
       }}
