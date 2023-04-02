@@ -28,6 +28,7 @@ export type FramesFieldProps = TextInputProps;
 
 export interface FramesCardFieldProps extends FramesFieldProps {
   showIcon?: boolean;
+  mask?: any;
 }
 
 interface Validation {

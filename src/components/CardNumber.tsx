@@ -31,6 +31,7 @@ const CardNumber: React.FC<FramesCardFieldProps> = (props) => {
               {...props}
               value={state.cardNumber}
               style={[styles.cardNumber, props.style]}
+              mask={props.mask}
               onChangeText={(val: string) => {
                 if (val.length > 19) {
                   return;
