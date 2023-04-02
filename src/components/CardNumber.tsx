@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { StyleSheet, View, TextInput, Image } from "react-native";
 
+import MaskInput from "react-native-mask-input";
+
 import { BIN_CHANGE, CARD_CHANGE } from "../utils/actions";
 import { FramesConsumer, FramesContext } from "../Frames";
 import { FramesCardFieldProps } from "../types/types";
@@ -21,7 +23,7 @@ const CardNumber: React.FC<FramesCardFieldProps> = (props) => {
         }
         return (
           <View style={styles.wrapper}>
-            <TextInput
+            <MaskInput
               autoCompleteType="cc-number"
               keyboardType="number-pad"
               returnKeyType="done"
