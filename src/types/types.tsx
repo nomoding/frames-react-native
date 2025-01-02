@@ -4,7 +4,7 @@ import {
   ViewStyle,
   StyleProp,
   TouchableOpacityProps,
-  TextProps,
+  TextStyle,
 } from "react-native";
 
 export interface Schemes {
@@ -180,7 +180,7 @@ export interface FrameCardTokenizedEvent {
   product_type?: string;
   billing_address?: GatewayBillingAddress;
   phone?: GatewayPhone;
-  name?: GatewayBillingAddress;
+  name?: string;
 }
 
 export interface FrameCardTokenizationFailedEvent {
@@ -196,5 +196,5 @@ export interface CardBinChangedEvent {
 
 export interface SubmitButtonProps extends TouchableOpacityProps {
   title: string;
-  textStyle?: TextProps;
+  textStyle?: TextStyle;
 }
