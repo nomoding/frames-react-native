@@ -8,6 +8,5 @@ webpack.config.js
 .prettierrc 
 .travis.yml
 **/.DS_Store
-.expo-shared
 babel.config.js    
 tsconfig.json      
